@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col-lg-4">
+    <app-weather-card [currentWeather]="currentWeather"> </app-weather-card>
+  </div>
+</div>
+
+<h1>Pronóstico</h1>
+
+<div class="row">
+  <div class="col-lg-4" *ngFor="let weather of forecast">
+    <app-weather-card [currentWeather]="weather"> </app-weather-card>
+  </div>
+</div>
