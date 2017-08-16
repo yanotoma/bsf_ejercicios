@@ -1,3 +1,5 @@
+import { CustomCurrencyPipe } from './_Pipes/custom-currency.pipe';
+import { CurrencyInputDirective } from './_Directives/currency-input.directive';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -10,6 +12,7 @@ import { BooksComponent } from './books/books.component';
 
 import { WeatherService } from './home/home.service'
 import { WeatherCardComponent } from './weather-card/weather-card.component';
+import { BalanceComponent } from './balance/balance.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,10 @@ import { WeatherCardComponent } from './weather-card/weather-card.component';
     HomeComponent,
     BooksComponent,
     WeatherCardComponent,
-  ],
+    CurrencyInputDirective,
+    BalanceComponent,
+    CustomCurrencyPipe
+],
   imports: [
     BrowserModule,
     HttpModule,
@@ -25,7 +31,8 @@ import { WeatherCardComponent } from './weather-card/weather-card.component';
     FormsModule
   ],
   providers: [
-    WeatherService
+    WeatherService,
+    CustomCurrencyPipe
   ],
   bootstrap: [AppComponent]
 })

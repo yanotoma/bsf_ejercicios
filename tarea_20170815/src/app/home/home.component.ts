@@ -21,12 +21,10 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
 
     this.weatherService.getWeather().subscribe( res => {
-      console.log(res);
       this.currentWeather = res.data[0];
     });
 
     this.weatherService.getForecast().subscribe( res => {
-      console.log('getForecast', res);
       this.forecast = res.data.filter( item => item.datetime.split(':')[1] === '15');
       this.forecast.map( item => {
         item.city_name = res.city_name;
